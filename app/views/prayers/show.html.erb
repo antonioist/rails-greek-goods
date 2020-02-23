@@ -16,9 +16,13 @@
       <h2><%= @prayer.name %></h2>
       <p><%= @prayer.pray %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= @prayer.comment.description if @prayer.comment %></h2>
-    <h2 class="card-trip-pricing"><%= @prayer.god.name if @prayer.god %></h2>
-    <%= cl_image_tag @prayer.god.photo.key , height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
+      <h2 class="card-trip-pricing"><%= @prayer.comment.description if @prayer.comment %></h2>
+      <h2 class="card-trip-pricing"><%= @prayer.god.name if @prayer.god %></h2>
+      <%#= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
+      <% if @prayer.god.photo.attached?%>
+        <%= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
+      <% else %>
+      <% end %>
   </div>
 </div>
 <div class="button-show-destroy-big">
@@ -41,5 +45,4 @@
     Made by Antonio
   </div>
 </div>
-
 
