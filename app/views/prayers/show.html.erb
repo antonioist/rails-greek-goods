@@ -19,16 +19,17 @@
       <h2 class="card-trip-pricing"><%= @prayer.comment.description if @prayer.comment %></h2>
       <h2 class="card-trip-pricing"><%= @prayer.god.name if @prayer.god %></h2>
       <%#= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
-      <% if @prayer.god.photo.attached?%>
+      <% if @prayer.god && @prayer.god.photo.attached?%>
         <%= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
       <% else %>
+        <%#= cl_image_tag("lego_gods", width: 400, height: 300, crop: :fill) %>
       <% end %>
   </div>
 </div>
 <div class="button-show-destroy-big">
   <div class="button-show-destroy">
     <h5>Destroy a GOD?</h5>
-    <%= link_to comment_path, methos: :delete, data: { confirm: "Do you dare DESTROY ME!, the Greek god #{@prayer.comment.god.name}, YOU WILL PAY WITH YOUR LIFE FILTHY HUMAN"}, id: "button-show-destroy-god" do %>
+    <%= link_to comment_path, method: :delete, data: { confirm: "Do you dare DESTROY ME!, the Greek god #{@prayer.comment.god.name if @prayer.comment}, YOU WILL PAY WITH YOUR LIFE FILTHY HUMAN"}, id: "button-show-destroy-god" do %>
       <i class="fas fa-meteor"></i>
     <% end %>
   </div>
