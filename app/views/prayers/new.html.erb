@@ -1,0 +1,6 @@
+<%= simple_form_for @prayer do |f| %>
+    <%= f.input :name  %>
+    <%= f.input :pray, collection: ["Love", "Study", "Health", "Money", "Smite", "Good Luck", "Bad Voodoo"], include_blank: false %>
+    <%= f.submit "New Prayer", class: 'btn btn-warning'%>
+<% end %>
+

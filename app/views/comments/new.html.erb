@@ -1,0 +1,16 @@
+<%= simple_form_for [@prayer, @comment] do |f| %>
+    <%= f.input :description, input_html: { maxlength: 100} %>
+    <%= f.association :god, collection: @gods %>
+    <%= f.submit "new god", class: 'btn btn-primary' %>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+

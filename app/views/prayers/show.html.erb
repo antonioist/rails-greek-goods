@@ -1,0 +1,12 @@
+<h1>show</h1>
+<h2><%= @prayer.name %></h2>
+<p><%= @prayer.pray %></p>
+
+<%= @prayer.comment.description if @prayer.comment %>
+<%= @prayer.god.name if @prayer.god %>
+
+<%= link_to "obliterate", prayer_path, method: :delete, data: { confirm: "Olitarate #{@prayer.name} pray?"} %>
+<%= link_to "add a God", new_prayer_comment_path(@prayer) %>
+<%= link_to root_path do %>
+    <i class="fas fa-igloo"></i>
+<% end %>
