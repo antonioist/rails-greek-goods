@@ -1,6 +1,6 @@
 # require 'faker'
 # puts "obliterating prayers....."
-Prayer.destroy_all
+# Prayer.destroy_all
 # prayers = ["Love", "Study", "Health", "Money", "Smite", "Good Luck", "Bad Voodoo", "Bad Luck", "Stomach acke"]
 
 # puts "creating prayers"
