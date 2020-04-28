@@ -5,10 +5,18 @@
   border-radius: 4px;
   margin: 16px 300px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
     .button-all {
-      padding: 4px 16px;
+      padding: 4px 18px;
+      font-size: 21px;
+      margin-top: 8px;
+      font-weight: bold;
+        &:hover {
+        text-decoration: none;
+        color: $white;
+        background-color: $button-hover;
+      }
     }
 
 }
