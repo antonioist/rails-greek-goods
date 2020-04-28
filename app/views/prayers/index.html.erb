@@ -1,32 +1,28 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.shopify.com/s/files/1/0245/3264/8041/articles/SHOP_HISTORY_GREEKGODS_2019_3X2_8c3fc105-d657-4d58-8e6b-b1e91d29acf1_1200x1200.jpg?v=1558683543);">
   <div class="container">
     <h1>Pray to your favorite <strong> Greek God</strong></h1>
-    <p id="banner-typed-text"></p>
+    <span id="banner-typed-text", style="color: white">Change your life Pray for love, luck or even smite your enemies!</span>
     <%= link_to "Pray now!", new_prayer_path, class: "btn btn-gradient", id: "button" %>
   </div>
 </div>
-
-<div class="cards">
-  <% @prayers.each do |prayer| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+<div class="container-cards">
+  <div class="cards">
+    <% @prayers.each do |prayer| %>
       <% if prayer.photo.attached? %>
-    url('<%= cl_image_path prayer.photo.key, height:400, width: 300 %>')">
-      <% else %>
-        <%= cl_image_tag("greece", height: 600, width: 400, crop: :fill) %>
-      <% end %>
-      <%= link_to "", prayer_path(prayer), class: "card-link" %>
-      <%= prayer.name %>
-      <div class="card-god-pic">
-        <% if prayer.god && prayer.god.photo.attached? %>
-          <%= cl_image_tag prayer.god.photo.key, height: 100, width: 100, crop: :fill %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path prayer.photo.key, height:400, width: 300 %>')">
         <% else %>
-          <%= cl_image_tag("lego_gods", height: 100, width: 100, crop: :fill) %>
-        <% end %>
-      </div>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path("greece", height: 600, width: 400, crop: :fill) %>')">
+          <% end %>
+          <%= link_to "", prayer_path(prayer), class: "card-link" %>
+          <div class="card-god-pic">
+            <% if prayer.god && prayer.god.photo.attached? %>
+              <%= cl_image_tag prayer.god.photo.key, height: 100, width: 100, crop: :fill %>
+            <% else %>
+              <%= cl_image_tag("lego_gods", height: 100, width: 100, crop: :fill) %>
+            <% end %>
+            <%= prayer.name %>
+          </div>
+        </div>
+      <%end %>
     </div>
-  <%end %>
-</div>
-
-<%= render 'shared/footer' %>
-
-
+  </div>
