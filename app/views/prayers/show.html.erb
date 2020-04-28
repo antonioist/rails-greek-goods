@@ -1,14 +1,11 @@
 <div class="container-button-destroy">
   <div>
-    <%= link_to "Add a God!", new_prayer_comment_path(@prayer), class: "btn btn-warning", id: "button-show" %>
+    <%= link_to "Add a God!", new_prayer_comment_path(@prayer), class: "button-all", id: "button-show" %>
   </div>
   <div>
-    <%= link_to "Destroy a prayer!", prayer_path, method: :delete, data: { confirm: "Destroy #{@prayer.name} pray?"}, class: "btn btn-warning", id: "button-show"%>
+    <%= link_to "Destroy a prayer!", prayer_path, method: :delete, data: { confirm: "Destroy #{@prayer.name} pray?"}, class: "button-all", id: "button-show"%>
   </div>
-
 </div>
-
-
 <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
@@ -16,14 +13,14 @@
       <h2><%= @prayer.name %></h2>
       <p><%= @prayer.pray %></p>
     </div>
-      <h2 class="card-trip-pricing"><%= @prayer.comment.description if @prayer.comment %></h2>
-      <h2 class="card-trip-pricing"><%= @prayer.god.name if @prayer.god %></h2>
-      <%#= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
-      <% if @prayer.god && @prayer.god.photo.attached?%>
-        <%= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
-      <% else %>
-        <%#= cl_image_tag("lego_gods", width: 400, height: 300, crop: :fill) %>
-      <% end %>
+    <h2 class="card-trip-pricing"><%= @prayer.comment.description if @prayer.comment %></h2>
+    <h2 class="card-trip-pricing"><%= @prayer.god.name if @prayer.god %></h2>
+    <%#= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
+    <% if @prayer.god && @prayer.god.photo.attached?%>
+      <%= cl_image_tag @prayer.god.photo.key, height: 50, width: 50, crop: :fill, class: "card-trip-user avatar-bordered" %>
+    <% else %>
+      <%#= cl_image_tag("lego_gods", width: 400, height: 300, crop: :fill) %>
+    <% end %>
   </div>
 </div>
 <div class="button-show-destroy-big">
@@ -36,4 +33,3 @@
     <% else %>
     <% end %>
   </div>
-
