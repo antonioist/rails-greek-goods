@@ -7,9 +7,8 @@
       <%= link_to "Add a God!", new_prayer_comment_path(@prayer), class: "button-all dropdown-item"%>
       <%= link_to "Destroy a prayer!", prayer_path, method: :delete, data: { confirm: "Destroy #{@prayer.name} pray?"}, class: "button-all dropdown-item"%>
       <% if @prayer.comment %>
-        <%= link_to comment_path(@prayer.comment), method: :delete, data: { confirm: "Do you dare DESTROY ME!, the Greek god #{@prayer.comment.god.name if @prayer.comment}, YOU WILL PAY WITH YOUR LIFE FILTHY HUMAN"}, class: "button-all dropdown-item" do %>
-          <i class="fas fa-meteor"> Destroy a god!</i>
-        <% end %>
+        <%= link_to "Destroy a god!", comment_path(@prayer.comment), method: :delete, data: { confirm: "Do you dare DESTROY ME!, the Greek god #{@prayer.comment.god.name if @prayer.comment}, YOU WILL PAY WITH YOUR LIFE FILTHY HUMAN"}, class: "button-all dropdown-item" %>
+        <!-- <i class="fas fa-meteor"></i> -->
       <% else %>
       <% end %>
     </div>
@@ -32,13 +31,3 @@
     <% end %>
   </div>
 </div>
-<div class="button-show-destroy-big">
-  <div class="button-show-destroy">
-    <h5>Destroy a GOD?</h5>
-    <% if @prayer.comment %>
-      <%= link_to comment_path(@prayer.comment), method: :delete, data: { confirm: "Do you dare DESTROY ME!, the Greek god #{@prayer.comment.god.name if @prayer.comment}, YOU WILL PAY WITH YOUR LIFE FILTHY HUMAN"}, id: "button-show-destroy-god" do %>
-        <i class="fas fa-meteor"></i>
-      <% end %>
-    <% else %>
-    <% end %>
-  </div>

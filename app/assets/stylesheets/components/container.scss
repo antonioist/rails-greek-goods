@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
     .button-all {
-      padding: 4px 18px;
+      padding: 4px 22px;
       font-size: 21px;
       margin-top: 8px;
       font-weight: bold;
@@ -17,6 +17,9 @@
         color: $white;
         background-color: $button-hover;
       }
+    }
+    .meteor-destroy {
+      font-family: $body-font;
     }
 
 }
