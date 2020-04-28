@@ -10,11 +10,21 @@
 .card-god-pic {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  // background-size: cover;
-  // background-position: center;
+    .card-god-pic-photo {
+      display: flex;
+      justify-content: flex-end;
+        .god-pic {
+          border-radius: 50%;
+          border: 2px solid $background-tab;
+          margin: 4px;
+        }
+    }
+    .card-god-pic-name{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
 
 .card-link {

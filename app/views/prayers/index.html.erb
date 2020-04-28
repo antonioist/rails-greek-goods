@@ -15,12 +15,16 @@
           <% end %>
           <%= link_to "", prayer_path(prayer), class: "card-link" %>
           <div class="card-god-pic">
-            <% if prayer.god && prayer.god.photo.attached? %>
-              <%= cl_image_tag prayer.god.photo.key, height: 100, width: 100, crop: :fill %>
-            <% else %>
-              <%= cl_image_tag("lego_gods", height: 100, width: 100, crop: :fill) %>
-            <% end %>
-            <%= prayer.name %>
+            <div class="card-god-pic-photo">
+              <% if prayer.god && prayer.god.photo.attached? %>
+                <%= cl_image_tag prayer.god.photo.key, class: "god-pic", height: 100, width: 100, crop: :fill %>
+              <% else %>
+                <%= cl_image_tag("lego_gods", class: "god-pic", height: 100, width: 100, crop: :fill) %>
+              <% end %>
+            </div>
+            <div class="card-god-pic-name">
+              <%= prayer.name %>
+            </div>
           </div>
         </div>
       <%end %>
