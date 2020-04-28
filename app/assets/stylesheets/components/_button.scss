@@ -52,4 +52,18 @@
   color: rgb(142, 1, 1);
 }
 
+.button-all {
+  background-color: $orange;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  border-radius: 8px;
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
+}
+
 
